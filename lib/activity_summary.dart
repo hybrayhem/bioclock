@@ -28,10 +28,10 @@ class ActivitySummary extends StatelessWidget {
                 end: Alignment.centerRight,
               ),
               shape: BoxShape.circle,
-              border: Border.all(color: Colors.white, width: 3)),
+              border: Border.all(color: Colors.white, width: 4)),
           child: new Icon(
             planet.icon,
-            size: 30,
+            size: 32,
           ),
           height: 92.0,
           width: 92.0,

@@ -86,16 +86,41 @@ class _PlanPageState extends State<PlanPage> {
                     actionPane: SlidableDrawerActionPane(),
                     actionExtentRatio: 0.15,
                     actions: <Widget>[
-                      IconButton(icon: Icon(Icons.delete), onPressed: (){})
+                      IconButton(
+                          icon: Icon(Icons.delete),
+                          onPressed: () {
+                            activities.removeAt(index);
+                            setState(() {});
+                            Scaffold.of(context).showSnackBar(SnackBar(
+                              content: Text("${activity.title} silindi."),
+                              action: SnackBarAction(
+                                label: "TAMAM",
+                                onPressed: () {},
+                              ),
+                            ));
+                          })
                     ],
                     secondaryActions: <Widget>[
-                      IconButton(icon: Icon(Icons.check_circle), onPressed: (){})
+                      IconButton(
+                          icon: Icon(Icons.check_circle),
+                          onPressed: () {
+                            activities.removeAt(index);
+                            setState(() {});
+                            Scaffold.of(context).showSnackBar(SnackBar(
+                              content: Text(
+                                  "Tebrikler! ${activity.title} tamamlandı."),
+                              action: SnackBarAction(
+                                label: "TAMAM",
+                                onPressed: () {},
+                              ),
+                            ));
+                          })
                     ],
                     child: Container(
                       margin: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 16),
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 17, vertical: 8),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 17, vertical: 8),
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: gradientColor,
@@ -133,10 +158,12 @@ class _PlanPageState extends State<PlanPage> {
                                         fontFamily: 'avenir',
                                         fontSize: 16),
                                   ),
-                                  activity.expand ? IconButton(
-                                    icon: Icon(Icons.edit_outlined),
-                                    onPressed: (){},
-                                  ) : Container()
+                                  activity.expand
+                                      ? IconButton(
+                                          icon: Icon(Icons.edit_outlined),
+                                          onPressed: () {},
+                                        )
+                                      : Container()
                                 ],
                               ),
                               Padding(
@@ -157,7 +184,7 @@ class _PlanPageState extends State<PlanPage> {
                                     fontWeight: FontWeight.w700),
                               ),
                               RotatedBox(
-                                quarterTurns: 1,
+                                quarterTurns: activity.expand ? 3 : 1,
                                 child: IconButton(
                                     icon: Icon(Icons.play_arrow_rounded),
                                     color: Colors.white,
@@ -185,8 +212,37 @@ class _PlanPageState extends State<PlanPage> {
                                       // ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 25.0, top: 12.0),
-                                      child: stickRow(widget.dense ? 260 : 320, [0, 0, 0, 1, 2, 2, 3, 4, 5, 4, 2, 2, 1, 1, 1, 0, 0, 0, 1, 3, 2, 0, 0, 0,], hour),
+                                      padding: const EdgeInsets.only(
+                                          left: 25.0, top: 12.0),
+                                      child: stickRow(
+                                          widget.dense ? 260 : 320,
+                                          [
+                                            0,
+                                            0,
+                                            0,
+                                            1,
+                                            2,
+                                            2,
+                                            3,
+                                            4,
+                                            5,
+                                            4,
+                                            2,
+                                            2,
+                                            1,
+                                            1,
+                                            1,
+                                            0,
+                                            0,
+                                            0,
+                                            1,
+                                            3,
+                                            2,
+                                            0,
+                                            0,
+                                            0,
+                                          ],
+                                          hour),
                                     ),
                                     // Row(
                                     //   children: [
@@ -204,7 +260,7 @@ class _PlanPageState extends State<PlanPage> {
                                       },
                                       min: 0,
                                       max: 24,
-                                      divisions: 287,
+                                      divisions: 96,
                                       activeColor: Colors.white,
                                       inactiveColor: Colors.deepPurpleAccent,
                                     )

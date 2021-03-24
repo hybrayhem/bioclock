@@ -60,7 +60,7 @@ class ActivityDetailPage extends StatelessWidget {
   }
 
   Container _getContent() {
-    final _overviewTitle = "Information".toUpperCase();
+    final _overviewTitle = "Nedir?";
     return new Container(
       child: new ListView(
         padding: new EdgeInsets.fromLTRB(0.0, 72.0, 0.0, 32.0),

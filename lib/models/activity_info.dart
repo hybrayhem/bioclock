@@ -22,50 +22,88 @@ class ActivityInfo {
 List<ActivityInfo> planets = [
   const ActivityInfo(
       id: "1",
-      title: "Breakfast",
-      subtitle: "subtitle breakfast",
+      title: "Kahvaltı",
+      subtitle: "Günün en önemli öğünü!",
       description:
-          "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury. In English, Mars carries a name of the Roman god of war, and is often referred to as the 'Red Planet' because the reddish iron oxide prevalent on its surface gives it a reddish appearance that is distinctive among the astronomical bodies visible to the naked eye. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.",
+          "Dünya, Güneş Sisteminde; bir kısmı aydınlık bir kısmı karanlık 24 saatlik bir döngüde hareket eder. Biyolojik, hormonal ve davranış kalıpları döngüsünün 24 saate göre oluşan ritmine SİRKADİYEN RİTİM denir. "
+          "Yaşamın başlangıcından beri bakterilerden insanlara, böceklerden kuşlara tüm canlılar birer sirkadiyen saat geliştirdiler. Temel aydınlık-karanlık verilerini düzenli sistemlere çeviren bu saate uygun yaşamak günümüz koşullarında oldukça zor. "
+          "Özellikle çalışma saatlerine, beslenme saatlerine ve en önemlisi uyku saatlerine uygun yaşayamayan birçok insan var. Bu insanların bir kısmı biyolojik iç saatin varlığından bile haberdar değil. Oysa ki uyku, açlık-tokluk, hormonal aktiviteler ve genlerin okunmasında dahi bu biyolojik iç saate bağımlıdır. "
+          "Bir çalışmaya göre gen okunmasının %50'sini bu iç saat kontrol eder. Peki bu iç saat nerededir? Nasıl çalışır? Aslında vücudumuzda her organda, sistemde ve hücrelerde saat genleri mevcuttur. Diğer genlerin dolayısıyla metabolizmanın dengesi için denetleyici görevleri vardır. Ancak bunlar bu halleriyle koordine çalışamazlar.  "
+          "SCN; organ, sistem ve hücreleri koordine eden yapıdır. Beynin hipatalamus bölgesindeki süper kiyazmatik çekirdek (SCN) denilen bu sinir demeti doğrudan göze bağlıdır ve aydınlık-karanlık döngüsünü takip eder. Vücudumuzun sesini dinlemez ve biyolojik iç saatimize uymazsak koordinasyon bozulabilir ve bunun kötü sonuçları olabilir."
+          " Saptanmış birçok rahatsızlık nedenlerinden biri de bu iç saate uymamanın sonucudur. Önceki çalışmalar ve hala devam eden çalışmalar gösteriyor ki obezite, stres, depresyon, uyku problemleri gibi birçok rahatsızlığın temelinde sirkadiyen ritmin bozulması yatıyor. İşte bu yüzden ritmin bozulmaması gerekiyor. Biyolojik saate uyarak daha sağlıklı, daha verimli bir hayat yaşayabilirsiniz. "
+          "\n\n\n"
+          "Sirkadiyen Ritme Göre Kahvaltı:\nKahvaltı, yeme penceresini açan öğündür. Metabolizmanın başlatıcısı ve enerjinin temel kaynağıdır."
+          " Protein, karbonhidrat, ve yağ değerleri dengeli bir kahvaltı tercih edilmelidir.\n"
+          "Kahvaltının yapılması gereken zaman güneşin doğumundan yani kalkış zamanınızdan sonraki 2 saati kapsar. "
+          "Böylece kahvaltı ile yeme penceresi açılır. Bundan sonraki öğünler kahvaltıya göre daha hafif olmalıdır. "
+          "Yapılan çalışmalarda yeme alışkanlığı ile obezite arasındaki bağlantıları görebilirsiniz [3][4]."
+          "Yaklaşık 8-10 saat son öğün yenecektir. İşte bu aralığın en önem arz eden öğünü kahvaltıdır.",
       icon: Icons.free_breakfast_outlined,
       picture:
-          "https://www.nasa.gov/sites/default/files/thumbnails/image/pia21723-16.jpg",
+          "https://image.freepik.com/free-photo/turkish-breakfast-setup-with-egg-tomato-dish-sausages-olives-eggs-cheese-butter-tea_141793-1971.jpg",
       timeInterval: "6-9 AM"),
   const ActivityInfo(
       id: "2",
-      title: "Lunch",
-      subtitle: "subtitle Lunch",
-      description:
-          "Neptune is the eighth and farthest known planet from the Sun in the Solar System. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. Neptune is 17 times the mass of Earth and is slightly more massive than its near-twin Uranus, which is 15 times the mass of Earth and slightly larger than Neptune. Neptune orbits the Sun once every 164.8 years at an average distance of 30.1 astronomical units (4.50×109 km). It is named after the Roman god of the sea and has the astronomical symbol ♆, a stylised version of the god Neptune's trident",
-      icon: Icons.free_breakfast_outlined,
+      title: "Öğle Yemeği",
+      subtitle: "Enerjini kazan!",
+      description: "ÖĞLE YEMEĞİ\n"
+          "Yeme penceresindeki bir diğer öğün öğle yemeğidir. Öğle yemeği yeniden şarj olmanın bir yoludur."
+          "Günün en çok enerjiye ihtiyacı olan saatleri yaklaşmakta olduğundan öğle yemeği önemlidir."
+          "Yine de öğle yemeğinde aşırıya kaçmamak gerekir. Çünkü akşam yemeğine az bir vakit kalıyor."
+          "Sadece ihtiyacımız olacak kadar yemeliyiz."
+          "\n\nYEMENİN ALTIN KURALLARI\n"
+          "1- Yeme penceresine uygun yemek yenmelidir. Yeme penceresi, kahvaltı ve akşam yemeği arasındaki süredir ve 8-10 saat olmalıdır. Bu aralık dışında besin tüketmemek gerekir.\n"
+          "2- İlk öğünü sağlam tutmak, sonraki öğünleri hafif geçirmek gerekmektedir.\n"
+          "3- Abur cuburdan uzak durup bol bol lifli gıdalar tüketilmelidir.\n"
+          "NOT: Yeme penceresine ilk başlayacak insanlar 12 saat ile başlayıp zamanla bu aralığı daraltmalıdır.\n\n",
+      icon: Icons.lunch_dining,
       picture:
-          "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/images/110411main_Voyager2_280_yshires.jpg",
-      timeInterval: "6-9 AM"),
+          "https://images.pexels.com/photos/326278/pexels-photo-326278.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      timeInterval: "12 AM - 1 PM"),
   const ActivityInfo(
       id: "3",
-      title: "Dinner",
-      subtitle: "subtitle Dinner",
+      title: "Akşam Yemeği",
+      subtitle: "Hafif bir akşam yemeği!",
       description:
-          "The Moon is an astronomical body that orbits planet Earth, being Earth's only permanent natural satellite. It is the fifth-largest natural satellite in the Solar System, and the largest among planetary satellites relative to the size of the planet that it orbits (its primary). Following Jupiter's satellite Io, the Moon is second-densest satellite among those whose densities are known.",
-      icon: Icons.free_breakfast_outlined,
-      picture: "https://farm5.staticflickr.com/4086/5052125139_43c31b7012.jpg",
-      timeInterval: "6-9 AM"),
+          "Günün son öğünüdür. Sirkadiyen ritme uygun bir uyku düzeninde akşam yemeğinden sonra fazla bir enerjiye ihtiyacımız yoktur. Yediğimiz şeyler bu saatten sonra enerji fazlalığı olarak vücuda depo edilir. Bu yüzden hafif bir akşam yemeği tercih etmek gerekecektir. Akşam yemeğini ağır geçiren milletlerde obezite oranı yüksektir [1][4]. Üstelik akşam yemeğinde fazla yemek uyku kalitesini de düşürür."
+          "\n\nYEMENİN ALTIN KURALLARI\n"
+          "1- Yeme penceresine uygun yemek yenmelidir. Yeme penceresi, kahvaltı ve akşam yemeği arasındaki süredir ve 8-10 saat olmalıdır. Bu aralık dışında besin tüketmemek gerekir.\n"
+          "2- İlk öğünü sağlam tutmak, sonraki öğünleri hafif geçirmek gerekmektedir.\n"
+          "3- Abur cuburdan uzak durup bol bol lifli gıdalar tüketilmelidir.\n"
+          "NOT: Yeme penceresine ilk başlayacak insanlar 12 saat ile başlayıp zamanla bu aralığı daraltmalıdır.\n\n",
+      icon: Icons.dinner_dining,
+      picture:
+          "https://images.pexels.com/photos/4194625/pexels-photo-4194625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      timeInterval: "16-19 PM"),
   const ActivityInfo(
       id: "4",
-      title: "Sport",
-      subtitle: "subtitle Sport",
+      title: "Spor",
+      subtitle: "Dinç kalmanın sırrı!",
       description:
-          "Earth is the third planet from the Sun and the only object in the Universe known to harbor life. According to radiometric dating and other sources of evidence, Earth formed over 4 billion years ago. Earth's gravity interacts with other objects in space, especially the Sun and the Moon, Earth's only natural satellite. Earth revolves around the Sun in 365.26 days, a period known as an Earth year. During this time, Earth rotates about its axis about 366.26 times.",
-      icon: Icons.free_breakfast_outlined,
+          "Günün her vakti aktif olmak gereklidir. Günümüz dijitalleşen dünyasında insan hareketsiz bir yaşama mahkum edilmiştir. Sirkadiyen ritmin düzgün çalışabilmesi, enerji metabolizması ve beslenme ile sportif aktiviteler derinden bağlantılıdır. Kalp ve kas gücünü maksimum olduğu saatlerde spor yapmak en doğrusudur. Saat 17.00 civarı bunun için uygundur. Mümkünse sabah saatlerinde veya gece geç saatlerde ağır sporlar yapılmamalıdır[5][6]. Çünkü bu saatlerdeki metabolizmaya yükleme yapmak tüm metabolik ritmi etkiler. Ancak gün içerisinde herhangi bir saatte hafif egzersizler yapılabilir ve yapılması tavsiye edilir.",
+      icon: Icons.directions_run_outlined,
       picture:
-          "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss042e340851_1.jpg",
-      timeInterval: "6-9 AM"),
+          "https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      timeInterval: "15-16 PM"),
   const ActivityInfo(
       id: "5",
-      title: "Sleep",
-      subtitle: "subtitle Sleep",
+      title: "Uyku",
+      subtitle: "Dinlenme vakti!",
       description:
-          "Mercury is the smallest and innermost planet in the Solar System. Its orbital period around the Sun of 88 days is the shortest of all the planets in the Solar System. It is named after the Roman deity Mercury, the messenger to the gods.",
-      icon: Icons.free_breakfast_outlined,
-      picture: "https://c1.staticflickr.com/9/8105/8497927473_2845ae671e_b.jpg",
-      timeInterval: "6-9 AM"),
+          "Her gün metabolizma ve stres yüzünden hücrelerimiz hasar görür. Hücrelerin yeniden onarılması ve kullanılır hale gelmesi için uyku önemlidir. Uyku, kas geliştirme, yağ yakma, hafıza yenileme, öğrenme zamanıdır[7]. Biyolojik yenilenme için saat 22.00 ile 03.00 arası yeterlidir ancak bu sirkadiyen ritme ne kadar uyduğunuza bağlıdır[8]. Ortalama saat akşam 10 gibi yatıp gün doğumuna yakın bir zamanda uyanmak iyi olacaktır. Çünkü sirkadiyen ritmin çalışma mekanizması temelde ışığa bağlıdır. Dolayısıyla sabah ışığını almak adrenalin, kortizol gibi hormonları serbest bırakarak metabolik olarak sizi o güne hazırlar[9]. Fazlası yine zararlıdır. Aynı şekilde gece yapay ışığa maruz kalmak sirkadyen ritmi bozar[10].\n"
+          "Uyku sirkadiyen ritim için belirleyici bir zamandır. Uyku zamanının kaymasına bağlı oluşan baş ağrısı, iç bulantısı gibi belirtilerin en çok görüldüğü durum yine bir uyku bozukluğu olan Jetlag’dir. Jetlag günaşırı seyehatlerde ortaya çıkan bir durumdur. Gittiğiniz yer başlangıç konumunuzdan saat dilimi olarak gerideyse Jetlag’e kapılma riskiniz artar. Merak etmeyin kısa sürelidir. Vücut kendini hemen toparlar. Ancak tehlikeli olan Jetlag’in bir benzeri olan social Jetlag’dır. Social Jetlag uzun öğle uykuları sebebiyle olan ve Jetlag benzeri sonuçlar gösteren ağır uyku bozukluğudur[11]. Tüm sistemi altüst eder. Bu yüzden öğle uykusu kestirme şeklinde ve kısa olmalıdır.",
+      icon: Icons.hotel_outlined,
+      picture:
+          "https://images.pexels.com/photos/2817421/pexels-photo-2817421.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      timeInterval: "11 PM - 6 AM"),
+  const ActivityInfo(
+      id: "6",
+      title: "Zihinsel Aktivite",
+      subtitle: "Zihnini doğru kullan!",
+      description:
+          "Yaptığımız işlerdeki verimimiz zihinsel aktifliğimize göre şekillenir. Zihnin en aktif olduğu zamanı kesin olarak söylemek zordur ancak doğal ışık altında zihnimizin daha hızlı çalıştığını söyleyebiliriz[12]. Doğal ışıkça zengin günün aydınlık olduğu zamanlar ve özellikle erken saatler zihnin en berrak ve verimli olduğu saatlerdir. Uyku sonrası onarılan ve sağlamlaştırılan hücreler zihnimizi daha canlı kılar[7].",
+      icon: Icons.menu_book_outlined,
+      picture:
+          "https://images.pexels.com/photos/5088022/pexels-photo-5088022.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      timeInterval: "9-12 AM"),
 ];

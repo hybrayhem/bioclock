@@ -13,12 +13,15 @@ class _HomePageState extends State<HomePage> {
   bool dense = false;
   bool drag = false;
   int acceptedData = 0;
+  bool drop = false;
+
+  GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
 
   Future<bool> _onWillPop() {
     return showDialog(
           context: context,
           builder: (context) => new AlertDialog(
-            title: new Text('Do you going to make healthy things?'),
+            title: new Text('Are you going to live a healthy life?'),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             actions: <Widget>[
@@ -47,6 +50,7 @@ class _HomePageState extends State<HomePage> {
     return WillPopScope(
       onWillPop: _onWillPop,
       child: Scaffold(
+          key: _drawerKey,
           drawerScrimColor: Colors.transparent,
           appBar: _appBar(),
           drawer: _drawer(),
@@ -67,31 +71,55 @@ class _HomePageState extends State<HomePage> {
 
   Widget _appBar() => AppBar(
         toolbarHeight: 85,
-        title: Text(
-          _selectedIndex == 0
-              ? "Weekday Routine"
-              : _selectedIndex == 1
-                  ? "Analysis"
-                  : _selectedIndex == 2
-                      ? "Inspire"
-                      : " ",
-          style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-              fontSize: 21,
-              fontFamily: "Poppins"),
+        title: Row(
+          mainAxisAlignment: _selectedIndex == 0 ? MainAxisAlignment.end : MainAxisAlignment.center,
+          children: [
+            Text(
+              _selectedIndex == 0
+                  ? "Haftaiçi Rutini"
+                  : _selectedIndex == 1
+                      ? "Analiz"
+                      : _selectedIndex == 2
+                          ? "Bilgi"
+                          : " ",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 21,
+                  fontFamily: "Poppins"),
+            ),
+            Padding(padding: EdgeInsets.symmetric(horizontal: 26)),
+            _selectedIndex == 0
+                ? IconButton(
+                icon: Icon(Icons.arrow_drop_down),
+                onPressed: () {
+                  // setState(() {
+                  //   dense = !dense;
+                  // });
+                })
+                : Container()
+          ],
         ),
-        actions: [
-          _selectedIndex == 0
-              ? IconButton(
-                  icon: Icon(Icons.arrow_drop_down),
-                  onPressed: () {
-                    setState(() {
-                      dense = !dense;
-                    });
-                  })
-              : Container()
-        ],
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            setState(() {
+              dense = true;
+            });
+            _drawerKey.currentState.openDrawer();
+          },
+        ),
+        // actions: [
+        //   _selectedIndex == 0
+        //       ? IconButton(
+        //           icon: Icon(Icons.arrow_drop_down),
+        //           onPressed: () {
+        //             // setState(() {
+        //             //   dense = !dense;
+        //             // });
+        //           })
+        //       : Container()
+        // ],
         centerTitle: true,
         elevation: 0.0,
         backgroundColor: Colors.transparent,
@@ -105,45 +133,20 @@ class _HomePageState extends State<HomePage> {
             Padding(padding: EdgeInsets.all(10)),
             IconButton(
               icon: Icon(Icons.check_circle),
-              onPressed: () {},
-            ),
-            Padding(padding: EdgeInsets.all(40)),
-            Icon(Icons.free_breakfast_outlined),
-            Padding(padding: EdgeInsets.all(20)),
-            Icon(Icons.sports_cricket_outlined),
-            Padding(padding: EdgeInsets.all(20)),
-            Icon(Icons.nights_stay_outlined),
-            Padding(padding: EdgeInsets.all(20)),
-            Draggable<int>(
-              // Data is the value this Draggable stores.
-              data: 10,
-              child: IconButton(
-                icon: Icon(Icons.free_breakfast_outlined),
-                onPressed: () {},
-              ),
-              feedback: ClipOval(
-                child: Container(
-                  color: Colors.black,
-                  height: 60,
-                  width: 60,
-                  child: Icon(Icons.free_breakfast_outlined),
-                ),
-              ),
-              childWhenDragging: IconButton(
-                icon: Icon(Icons.free_breakfast_outlined),
-                onPressed: null,
-              ),
-              onDragStarted: () {
+              onPressed: () {
                 setState(() {
-                  drag = true;
+                  dense = false;
                 });
-              },
-              onDragEnd: (val) {
-                setState(() {
-                  drag = false;
-                });
+                Navigator.of(context).pop();
               },
             ),
+            Padding(padding: EdgeInsets.all(30)),
+            _dragIcon(Icons.free_breakfast_outlined),
+            _dragIcon(Icons.lunch_dining),
+            _dragIcon(Icons.directions_run_outlined),
+            _dragIcon(Icons.dinner_dining),
+            _dragIcon(Icons.menu_book_outlined),
+            _dragIcon(Icons.hotel_outlined),
             // DragTarget<int>(
             //   builder: (
             //     BuildContext context,
@@ -172,14 +175,48 @@ class _HomePageState extends State<HomePage> {
   Widget _bottomBar() => BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined), label: "Home"),
+              icon: Icon(Icons.home_outlined), label: "Ana Sayfa"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.analytics_outlined), label: "Analysis"),
+              icon: Icon(Icons.analytics_outlined), label: "Analiz"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.text_snippet_outlined), label: "Inpire"),
+              icon: Icon(Icons.text_snippet_outlined), label: "Bilgi"),
         ],
         currentIndex: _selectedIndex,
         onTap: _onTap,
         type: BottomNavigationBarType.fixed,
+      );
+
+  Widget _dragIcon(IconData icon) => Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Draggable<int>(
+          // Data is the value this Draggable stores.
+          data: 10,
+          child: IconButton(
+            icon: Icon(icon),
+            onPressed: () {},
+          ),
+          feedback: ClipOval(
+            child: Container(
+              color: Colors.black,
+              height: 60,
+              width: 60,
+              child: Icon(icon),
+            ),
+          ),
+          childWhenDragging: IconButton(
+            icon: Icon(icon),
+            onPressed: null,
+          ),
+          onDragStarted: () {
+            setState(() {
+              drag = true;
+            });
+          },
+          onDragEnd: (val) {
+            setState(() {
+              drag = false;
+            });
+          },
+        ),
       );
 }
